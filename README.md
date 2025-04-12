@@ -156,3 +156,25 @@
     "last 2 versions"
   ]}
   ```
+### 创建项目目录结构
+- 接口放哪里api
+- 路由router
+- 状态管理vuex
+- 组件 components
+- 页面 views
+- 工具方法 utils
+- 资源文件见 assets
+- layout布局文件夹
+- mixin（暂时不写内容）
+![image](https://github.com/user-attachments/assets/8d2574be-b3ef-4758-9897-1d3c1f4b8995)
+
+
+
+
+
+
+
+
+
+
+
