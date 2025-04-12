@@ -30,4 +30,10 @@
   git switch 分支名 # 更推荐的新写法（Git 2.23+）
   git checkout -b 本地分支名 origin/远程分支名 # 远程有分支，但你本地还没有，可以这样切
   ```
-  
+
+  ### 安装依赖，推送代码
+  ```shell
+  vuex
+  vue-router 版本为3
+  elementui
+  ```
