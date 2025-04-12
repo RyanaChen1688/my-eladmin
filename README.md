@@ -168,6 +168,13 @@
 - mixin（暂时不写内容）
 ![image](https://github.com/user-attachments/assets/8d2574be-b3ef-4758-9897-1d3c1f4b8995)
 
+### 创建vuex文件、vue-router文件、导入elementui
+- store/index.js
+- router/index.js
+- main.js
+- elementui
+
+### 【测试】编写一个测试路由，验证elementui导入是否成功、路由、vuex是否配置成功
 
 
 
