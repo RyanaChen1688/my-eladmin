@@ -21,9 +21,13 @@
 - 8、git branch -d xxx 删除xxx分支
 - 9、git branch -D xxx 强制删除xxx分支
 - 10、remotes/origin/main 不是一个本地分支（不像 main），它是 Git 自动管理的，你不能用 git branch -d 直接删掉它。想删除它，你需要清除 Git 对远程的记录。
-- 11、分支查看
+- 11、分支查看切换
   ```shell
   git branch        # 只看本地分支
-git branch -r     # 只看远程分支
-git branch -a     # 所有分支（本地 + 远程）
-```
+  git branch -r     # 只看远程分支
+  git branch -a     # 所有分支（本地 + 远程）
+  git checkout 分支名 # 切换到已有分支
+  git switch 分支名 # 更推荐的新写法（Git 2.23+）
+  git checkout -b 本地分支名 origin/远程分支名 # 远程有分支，但你本地还没有，可以这样切
+  ```
+  
