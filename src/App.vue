@@ -1,28 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <el-col :span="12">
+      <el-menu class="el-menu-vertical-demo" router>
+        <el-menu-item index="1"> <span slot="title">导航一</span> </el-menu-item
+        ><el-menu-item index="2">
+          <span slot="title">导航二</span> </el-menu-item
+        ><el-menu-item index="3">
+          <span slot="title">导航三</span>
+        </el-menu-item>
+        <el-menu-item index="4" :route="{ name: 'test', path: '/test' }">
+          <span slot="title">测试页</span>
+        </el-menu-item>
+      </el-menu>
+    </el-col>
+
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  components: {},
+  methods: {},
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
