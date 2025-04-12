@@ -3,7 +3,7 @@
 
 ### 先把本地的代码和远程仓库进行管理
 - 掌握git的使用，给本地代码添加远程仓库地址
-- 1、保证你本地安装了git工具
+- 1、保证你本地安装了git工具，cmd输入git，如果提示命令找不到的话，可能是没有配置环境变量，也有可能是没有安装git，请检查
 - 2、需要使用git remote list，我当前本地的项目关联了哪些远程地址
 - 3、需要使用git remote add 远程名字github|gitee|origin 远程仓库的地址（https://github.com/用户名/仓库名字.git）
 - 4、git remote remove 远程名字
