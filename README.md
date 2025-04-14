@@ -185,9 +185,18 @@
   - 需要实现点击验证码，自动刷新验证码的功能
 - 对接登录接口
   - 登录失败需要给出提示
+  - 密码需要rsa加密，公钥如下
+    ```javascript
+    const publicKey = 'MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBANL378k3RiZHWx5AfJqdH9xRNBmD9wGD\n' +
+  '2iRe41HdTNF8RUhNnHit5NpMNtGL0NPTSSpPjjI1kJfVorRvaQerUgkCAwEAAQ=='
+    ```
   - 登录成功后跳转到 首页路由 /
   - 登录成功后把 token 存储到 vuex中
 - 这些代码都直接写在Login.vue组件中
+- 对登录表单进行验证，验证项如下
+  - 用户名必填
+  - 密码必填
+  - 未输入用户名和密码则提示用户名必填、密码不填
 - 下一个任务再对接口操作、vuex的操作进行优化
   - 接口：把接口请求定义在api目录下、封装axios
   - vuex：把登录相关的状态数据分模块存储
