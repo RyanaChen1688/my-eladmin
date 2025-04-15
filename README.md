@@ -198,6 +198,8 @@
   - 密码必填
   - 未输入用户名和密码则提示用户名必填、密码不填
 - 下一个任务再对接口操作、vuex的操作进行优化
+  - 实现记住我，使用cookie实现
+  - ![image](https://github.com/user-attachments/assets/3e357dbe-9faa-4595-a82e-7e3fc615338b)
   - 接口：把接口请求定义在api目录下、封装axios
   - vuex：把登录相关的状态数据分模块存储
 
