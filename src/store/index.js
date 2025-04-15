@@ -5,10 +5,16 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        name: "XR",
-        age: 30
+        user: {
+            token: ""
+        }
     },
-    mutations: {},
+    mutations: {
+        setToken(state, newToken) {
+            state.token = newToken
+            console.log('###', newToken)
+        }
+    },
     actions: {},
     getters: {}
 })

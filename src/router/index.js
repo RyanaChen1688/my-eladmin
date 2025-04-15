@@ -5,11 +5,12 @@ Vue.use(VueRouter)
 
 const routes =
     [{
-        name: "test",
-        path: "/test",
-        component: () => import("../components/MyTest.vue")
+        name: "login",
+        path: "/login",
+        component: () => import("../views/MyLogin.vue")
     }]
 
 export default new VueRouter({
+    mode: 'history',
     routes
 })
