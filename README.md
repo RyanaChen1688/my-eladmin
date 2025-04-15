@@ -198,19 +198,32 @@
   - 密码必填
   - 未输入用户名和密码则提示用户名必填、密码不填
  
-### 登录成功后调整
+### 登录成功后跳转
   - 跳转到/dashboard路由
-  - 这个路由对应的页面暂时用作测试，不用什么具体的内容
+    - 新建一个view/dashboard.vue文件
+    - 再在router/index.js中添加路由
+    - 登录成功后跳转路由
+    - 这个路由对应的页面暂时用作测试，不用有什么具体的内容
   - 进入/dashboard页面后立即请求用户的信息和用户可访问的菜单
+    - 在methods中定义两个请求接口的方法，方法中需要输出请求得到的结果
+    - 在created中调用这两个接口请求方法
     - 用户信息接口文档：https://api.eladmin.uandj.site/doc.html#/default/%E7%B3%BB%E7%BB%9F%EF%BC%9A%E7%B3%BB%E7%BB%9F%E6%8E%88%E6%9D%83%E6%8E%A5%E5%8F%A3/getUserInfoUsingGET
     - 用户菜单接口文档：https://api.eladmin.uandj.site/doc.html#/default/%E7%B3%BB%E7%BB%9F%EF%BC%9A%E8%8F%9C%E5%8D%95%E7%AE%A1%E7%90%86/buildMenusUsingGET
     - 【注意】这两个接口是需要传递token才能访问的。具体参照接口文档和axios官方文档：https://axios-http.com/zh/docs/intro
+
     - 先直接在axios请求中传递token，然后再学着封装axios使用
-      - 配置拦截器自动传递token
-      - 在组件中导入封装好的axios
+      - 在utils文件夹下创建一个request.js文件
+      - request.js中创建一个axios实例  
+      - 配置请求拦截器自动传递token
+      - 导出这个axios实例
+
+      - 在dashboard组件中导入封装好的axios实例
       - 利用封装的axios发起请求。此时拦截器会工作，自动给请求加上token
+      - 测试接口是否能正常访问
+
     - 扩展
-      - 给axios同一添加接口请求报错提示
+      - 给axios统一添加接口请求报错提示（响应拦截器中实现，需要导入elementui的Msg组件）
+      - 在dashboard页面中使用组件（测试组件）把菜单渲染出来
 - 下一个任务再对接口操作、vuex的操作进行优化
   - 实现记住我，使用cookie实现
   - ![image](https://github.com/user-attachments/assets/3e357dbe-9faa-4595-a82e-7e3fc615338b)
