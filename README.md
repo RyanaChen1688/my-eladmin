@@ -242,6 +242,7 @@
     - 存储打开过的菜单（数组）
     - 当前选中菜单
   - 把Layout中涉及的状态数据存储在vuex的layout模块中
+  - 使用vuex的持久化插件存储vuex数据，保证刷新时vuex数据不丢失
 ![image](https://github.com/user-attachments/assets/6a454170-dc1f-4a13-a1cb-a3966b4e93e8)
 
 
