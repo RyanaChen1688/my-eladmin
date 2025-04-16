@@ -1,15 +1,13 @@
 <template>
   <div>
-    <my-menu v-if="menuData" :menuData="menuData"></my-menu>
   </div>
 </template>
 <script>
 import request from "@/utils/request";
-import MyMenu from "@/components/MyMenu.vue";
 export default {
   name: "MyDashboard",
   components: {
-    MyMenu,
+    // MyMenu,
   },
   data() {
     return {

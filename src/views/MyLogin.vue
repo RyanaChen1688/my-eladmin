@@ -135,7 +135,9 @@ MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBANL378k3RiZHWx5AfJqdH9xRNBmD9wGD
           Cookies.remove("password");
           Cookies.remove("token");
         }
-        this.$router.push("/");
+
+        // 登录成功后，根据 query 参数跳转到目标页面或默认页面
+        this.$router.push(this.$route.query.redirect || "/");
       } catch (err) {
         console.error(err);
       }
@@ -148,7 +150,6 @@ MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBANL378k3RiZHWx5AfJqdH9xRNBmD9wGD
       this.$refs[loginForm].validate((valid) => {
         if (valid) {
           console.log("submit!");
-
           this.loginAuthorization();
         } else {
           console.log("error submit!!");
