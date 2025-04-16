@@ -230,7 +230,19 @@
   - 接口：把接口请求定义在api目录下、封装axios
   - vuex：把登录相关的状态数据分模块存储
 
-
+### 搭建后台管理系统页面框架Layout
+  - 侧边栏菜单
+    - 项目logo标题
+    - 菜单
+    - 有展开折叠状态（用一个状态数据表示）
+  - 顶部
+    - 面包屑导航
+    - 头像
+  - 选修卡
+    - 存储打开过的菜单（数组）
+    - 当前选中菜单
+  - 把Layout中涉及的状态数据存储在vuex的layout模块中
+![image](https://github.com/user-attachments/assets/6a454170-dc1f-4a13-a1cb-a3966b4e93e8)
 
 
 
