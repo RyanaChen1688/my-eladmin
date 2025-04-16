@@ -8,6 +8,10 @@ const routes =
         name: "login",
         path: "/login",
         component: () => import("../views/MyLogin.vue")
+    }, {
+        name: "dashboard",
+        path: "/",
+        component: () => import("../views/MyDashboard.vue")
     }]
 
 export default new VueRouter({

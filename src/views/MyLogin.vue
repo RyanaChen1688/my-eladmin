@@ -54,9 +54,10 @@
   </div>
 </template>
 <script>
-import axios from "axios";
 import JSEncrypt from "jsencrypt";
 import Cookies from "js-cookie";
+import request from "@/utils/request";
+
 export default {
   name: "MyLogin",
   data() {
@@ -84,17 +85,16 @@ export default {
     };
   },
   methods: {
-    validCodeApi() {
-      axios
-        .get("/api/auth/code")
-        .then((res) => {
-          // console.log(res.data);
-          this.loginForm.validCodeUrlUuid = res.data.uuid;
-          this.loginForm.validCodeUrl = res.data.img;
-        })
-        .catch((err) => console.error(err));
+    async validCodeApi() {
+      try {
+        const res = await request.get("/api/auth/code");
+        this.loginForm.validCodeUrlUuid = res.uuid;
+        this.loginForm.validCodeUrl = res.img;
+      } catch (err) {
+        console.error(err);
+      }
     },
-    loginAuthorization() {
+    async loginAuthorization() {
       const publicKey = `
 -----BEGIN PUBLIC KEY-----
 MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBANL378k3RiZHWx5AfJqdH9xRNBmD9wGD
@@ -117,25 +117,28 @@ MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBANL378k3RiZHWx5AfJqdH9xRNBmD9wGD
         username: this.loginForm.username,
         uuid: this.loginForm.validCodeUrlUuid,
       };
-      axios
-        .post("/api/auth/login", loginObj)
-        .then((res) => {
-          const token = res.data.token;
-          this.$store.commit("setToken", token);
-          console.log("@@@", this.$store.state);
-          if (this.loginForm.rememberMe) {
-            Cookies.set("username", this.loginForm.username, { expires: 7 });
-            Cookies.set("password", encrypted, {
-              expires: 7,
-            });
-          } else {
-            Cookies.remove("username");
-            Cookies.remove("password");
-          }
-        })
-        .catch((err) => {
-          this.$message.error(err.response.data.message);
-        });
+      try {
+        const res = await request.post("/api/auth/login", loginObj);
+        const token = res.token;
+        this.$store.commit("setToken", token);
+        // console.log("@@@", this.$store.state);
+        if (this.loginForm.rememberMe) {
+          Cookies.set("username", this.loginForm.username, { expires: 7 });
+          Cookies.set("password", encrypted, {
+            expires: 7,
+          });
+          Cookies.set("token", token, {
+            expires: 7,
+          });
+        } else {
+          Cookies.remove("username");
+          Cookies.remove("password");
+          Cookies.remove("token");
+        }
+        this.$router.push("/");
+      } catch (err) {
+        console.error(err);
+      }
     },
     getValidCode() {
       this.validCodeApi();

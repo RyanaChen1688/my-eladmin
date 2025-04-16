@@ -6,6 +6,7 @@ import store from './store';
 import SvgIcon from '@/components/SvgIcon'
 import App from './App.vue'
 
+
 Vue.use(ElementUI);
 Vue.component('svg-icon', SvgIcon)
 const req = require.context('./assets/svg', false, /\.svg$/)
