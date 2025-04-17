@@ -144,7 +144,6 @@ MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBANL378k3RiZHWx5AfJqdH9xRNBmD9wGD
       this.$refs[loginForm].validate((valid) => {
         if (valid) {
           console.log("submit!");
-
           this.loginAuthorization();
         } else {
           console.log("error submit!!");
