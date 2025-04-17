@@ -5,6 +5,7 @@
     background-color="#545c64"
     text-color="#fff"
     active-text-color="#ffd04b"
+    :collapse="isCollapsed"
   >
     <el-menu-item index="0">
       <template slot="title">
@@ -59,12 +60,17 @@
   </el-menu>
 </template>
 <script>
+import { mapState } from 'vuex';
+
 export default {
   name: "MyAside",
   props: ["menuData"],
   created() {
     console.log("子组件收到", this.menuData);
   },
+  computed: {
+    ...mapState("layout", ["isCollapsed"])
+  }
 };
 </script>
 <style scoped>

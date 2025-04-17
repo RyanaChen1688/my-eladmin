@@ -1,5 +1,5 @@
 <template>
-  <svg class="svg-icon" aria-hidden="true">
+  <svg class="svg-icon" aria-hidden="true" @click="emitClick">
     <use :href="iconName"></use>
     <!-- 使用 href 替代 xlink:href -->
   </svg>
@@ -19,6 +19,12 @@ export default {
       return `#icon-${this.iconClass}`;
     },
   },
+  methods: {
+    emitClick() {
+      // 通知父组件。我被点击了，向父组件发送一个xxx的事件，父组件可以处理xxx事件
+      this.$emit("click")
+    }
+  }
 };
 </script>
 
