@@ -32,37 +32,23 @@
         <span>首页</span>
       </template>
     </el-menu-item>
-    <template v-for="(menu, index) in menuData">
-      <el-submenu
-        v-if="menu.children && menu.children.length > 0"
-        :key="index"
-        :index="`${index + 2}`"
-      >
-        <template slot="title">
-          <svg-icon :icon-class="menu.meta.icon" />
-          <span>{{ menu.meta.title }}</span>
-        </template>
-        <el-menu-item-group>
-          <el-menu-item
-            v-for="(item, idx) in menu.children"
-            :key="idx"
-            :index="`${index + 2}-${idx + 1}`"
-          >
-            <template slot="title">
-              <svg-icon :icon-class="item.meta.icon" />
-              <span>{{ item.meta.title }}</span>
-            </template>
-          </el-menu-item>
-        </el-menu-item-group>
-      </el-submenu>
-      <el-submenu v-else :key="index + 1"></el-submenu>
-    </template>
+
+    <my-menu
+      v-for="(menu, index) in menuData"
+      :key="index"
+      :menu="menu"
+      :menu-index="`${index + 2}`"
+    />
+
+
   </el-menu>
 </template>
 <script>
 import { mapState } from 'vuex';
+import MyMenu from './MyMenu.vue';
 
 export default {
+  components: { MyMenu },
   name: "MyAside",
   props: ["menuData"],
   created() {
