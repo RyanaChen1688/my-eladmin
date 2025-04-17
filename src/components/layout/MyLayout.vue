@@ -1,43 +1,35 @@
 <template>
-  <el-row style="">
-    <el-col :span="6" style="height: 100vh;border: solid red 1px;">
-      <!-- 侧边菜单 -->
-      <my-aside :menuData="menuData"/>
+  <div>
+    <el-col :span="4">
+      <my-aside :menuData="menuData" />
     </el-col>
-    <el-col :span="18" style="height: 100vh;border: solid blue 1px;">
-      <!-- 头部 -->
+    <el-col :span="20">
       <my-header />
-      <!-- 路由出口 -->
-       <router-view></router-view>
-       <!-- 底部 -->
-       <my-footer/>
+      <router-view></router-view>
+      <my-footer />
     </el-col>
-  </el-row>
+  </div>
 </template>
-
 <script>
-import MyAside from './MyAside.vue'
-import MyFooter from './MyFooter.vue'
-import MyHeader from './MyHeader.vue'
-import request from "@/utils/request"
+import request from "@/utils/request";
+import MyAside from "@/components/layout/MyAside.vue";
+import MyFooter from "@/components/layout/MyFooter.vue";
+import MyHeader from "@/components/layout/MyHeader.vue";
+
 export default {
+  name: "MyLayOut",
   components: { MyAside, MyHeader, MyFooter },
-  created() {
-    this.getInfo()
-    this.getMenu()
-  },
   data() {
     return {
-      userData: {},
       menuData: [],
-    }
+      userInfo: {},
+    };
   },
   methods: {
     async getInfo() {
       try {
         const res = await request.get("/api/auth/info");
         console.log("$$$info", res);
-        this.userData = res
       } catch (err) {
         console.error(err);
       }
@@ -51,10 +43,12 @@ export default {
         console.error(err);
       }
     },
-  }
-}
+  },
+  created() {
+    this.getInfo();
+    this.getMenu();
+  },
+};
 </script>
-
-<style>
-
+<style >
 </style>
