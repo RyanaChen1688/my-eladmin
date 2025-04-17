@@ -1,14 +1,19 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <component :is="comp" />
   </div>
 </template>
 
 <script>
+import MyLayOut from "./components/layout/MyLayOut.vue";
 export default {
   name: "App",
-  components: {},
-  methods: {},
+  components: { MyLayOut },
+  computed: {
+    comp() {
+      return this.$route.name === "login" ? "RouterView" : "MyLayOut";
+    },
+  },
 };
 </script>
 

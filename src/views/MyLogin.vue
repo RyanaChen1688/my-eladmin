@@ -127,15 +127,11 @@ MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBANL378k3RiZHWx5AfJqdH9xRNBmD9wGD
           Cookies.set("password", encrypted, {
             expires: 7,
           });
-          Cookies.set("token", token, {
-            expires: 7,
-          });
         } else {
           Cookies.remove("username");
           Cookies.remove("password");
-          Cookies.remove("token");
         }
-        this.$router.push("/");
+        this.$router.push(this.$route.query.redirect || "/");
       } catch (err) {
         console.error(err);
       }

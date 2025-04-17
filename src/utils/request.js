@@ -1,5 +1,6 @@
 import axios from "axios";
-import Cookies from "js-cookie";
+import store from "@/store";
+import router from "@/router";
 import { Message } from 'element-ui'
 
 const service = axios.create({
@@ -11,7 +12,7 @@ const service = axios.create({
 service.interceptors.request.use(
     config => {
         // 在发送请求之前添加 token
-        const token = Cookies.get('token')
+        const token = store.state.token
         if (token) {
             config.headers.Authorization = token
         }
@@ -30,7 +31,25 @@ service.interceptors.response.use(
     },
     error => {
         console.error('请求失败', error)
-        Message.error(error.response.data.message);
+
+        // 提取错误信息
+        const { response } = error
+
+        if (response) {
+            const { status, data } = response
+
+            // 显示错误消息
+            Message.error(data.message || '请求出错')
+
+            // 401 表示未授权，跳转到登录页
+            if (status === 401) {
+                router.push({ name: 'Login' }) // 跳转到登录页
+            }
+        } else {
+            Message.error('网络异常或服务器无响应')
+        }
+
+        return Promise.reject(error)
     }
 )
 
