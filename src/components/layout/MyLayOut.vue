@@ -1,9 +1,9 @@
 <template>
   <div>
-    <el-col :span="4">
+    <el-col :span="isCollapse ? 1 : 4">
       <my-aside :menuData="menuData" />
     </el-col>
-    <el-col :span="20">
+    <el-col :span="isCollapse ? 23 : 20">
       <my-header />
       <router-view></router-view>
       <my-footer />
@@ -15,6 +15,7 @@ import request from "@/utils/request";
 import MyAside from "@/components/layout/MyAside.vue";
 import MyFooter from "@/components/layout/MyFooter.vue";
 import MyHeader from "@/components/layout/MyHeader.vue";
+import { mapState } from "vuex";
 
 export default {
   name: "MyLayOut",
@@ -43,6 +44,9 @@ export default {
         console.error(err);
       }
     },
+  },
+  computed: {
+    ...mapState("layout", ["isCollapse"]),
   },
   created() {
     this.getInfo();

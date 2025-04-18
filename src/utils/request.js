@@ -2,6 +2,7 @@ import axios from "axios";
 import store from "@/store";
 import router from "@/router";
 import { Message } from 'element-ui'
+import { isNavigationFailure, NavigationFailureType } from 'vue-router'
 
 const service = axios.create({
     baseURL: "/",
@@ -39,17 +40,26 @@ service.interceptors.response.use(
             const { status, data } = response
 
             // 显示错误消息
-            Message.error(data.message || '请求出错')
+            console.error(data.message || '请求出错')
 
-            // 401 表示未授权，跳转到登录页
-            if (status === 401) {
-                router.push({ name: 'Login' }) // 跳转到登录页
+            // 如果是 401 且当前不是在登录页，再跳转
+            if (status === 401 && router.currentRoute.name !== 'login') {
+                // console.log('401 跳转 login')
+                Message.info("当前登录已过期，请重新登录！")
+
+                // 清除 token
+                store.commit('setToken', null) // 清除 Vuex 中的 token
+                // localStorage.removeItem('token') // 清除 localStorage 中的 token    
+                router.push({ name: 'login' }).catch(err => {
+                    if (!isNavigationFailure(err, NavigationFailureType.redirected)) {
+                        console.error('跳转 login 出错:', err)
+                    }
+                })
             }
-        } else {
-            Message.error('网络异常或服务器无响应')
-        }
 
-        return Promise.reject(error)
+
+            return Promise.reject(error)
+        }
     }
 )
 

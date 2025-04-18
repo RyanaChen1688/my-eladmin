@@ -6,7 +6,7 @@ export default {
   name: "MyFooter",
 };
 </script>
-<style >
+<style scoped>
 .el-footer {
   font-size: 0.7rem !important;
   color: #7a8b9a;

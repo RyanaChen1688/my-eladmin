@@ -1,5 +1,5 @@
 <template>
-  <svg class="svg-icon" aria-hidden="true">
+  <svg class="svg-icon" aria-hidden="true" @click="$emit('click')">
     <use :href="iconName"></use>
     <!-- 使用 href 替代 xlink:href -->
   </svg>
