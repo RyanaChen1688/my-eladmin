@@ -19,8 +19,10 @@
     </el-menu-item-group>
   </el-submenu>
   <el-menu-item v-else :index="menuIndex">
-    <svg-icon :icon-class="menu.meta.icon" />
-    <span>{{ menu.meta.title }}</span>
+    <router-link :to="{name:menu.name}">
+      <svg-icon :icon-class="menu.meta.icon" />
+      <span>{{ menu.meta.title }}</span>
+    </router-link>
   </el-menu-item>
 </template>
 

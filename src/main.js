@@ -14,6 +14,7 @@ req.keys().map(req)
 
 Vue.config.productionTip = false
 
+console.log(2222222, router.getRoutes())
 new Vue({
   router,
   store,

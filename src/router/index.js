@@ -1,7 +1,7 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
 import store from "@/store"
-
+import MyLayOut from "@/components/layout/MyLayOut.vue";
 // 解决ElementUI导航守卫报错的问题
 const originalPush = VueRouter.prototype.push;
 VueRouter.prototype.push = function push(location) {
@@ -16,7 +16,8 @@ VueRouter.prototype.replace = function replace(location) {
 Vue.use(VueRouter)
 
 const routes =
-    [{
+    [
+        {
         name: "login",
         path: "/login",
         component: () => import("../views/MyLogin.vue")
@@ -24,7 +25,8 @@ const routes =
         name: "dashboard",
         path: "/",
         component: () => import("../views/MyDashboard.vue")
-    }]
+    }
+]
 
 const router = new VueRouter({
     mode: 'history',
@@ -32,6 +34,7 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
+    console.log(1111, to, from)
     const isLoggedIn = !!store.state.token || !!localStorage.getItem('token');
 
     if (to.name === 'login') {

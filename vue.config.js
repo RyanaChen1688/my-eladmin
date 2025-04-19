@@ -2,6 +2,7 @@ const { defineConfig } = require('@vue/cli-service')
 const path = require('path')
 
 module.exports = defineConfig({
+  lintOnSave: false, // 关闭保存时的 lint 检查
   transpileDependencies: true,
   chainWebpack: config => {
     // 关键修复：必须同时处理两种 SVG 引用方式

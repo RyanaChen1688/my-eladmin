@@ -34,11 +34,34 @@ export default {
         console.error(err);
       }
     },
+    generateRoutes(dataArr) {
+      const routes = (dataArr||[]).map((item, idx, arr)=>{
+        const newItem = {
+          name:item.name,
+          path:item.path,
+          meta: {
+            noCache: item.meta.noCache,
+            title: item.meta.title,
+          },
+          children: this.generateRoutes(item.children),
+          component: ()=>import(`@/views/${item.component}`)
+        }
+        if(newItem.children.length===0) {
+          delete newItem.children
+        }
+        return newItem
+      })
+      return routes
+    },
     async getMenu() {
       try {
         const res = await request.get("/api/api/menus/build");
         console.log("@@@menu", res);
         this.menuData = [...res];
+        const routes = this.generateRoutes(res)
+        // console.log(JSON.stringify(r outes))
+        this.$router.addRoutes(routes);
+        console.log(this.$router.getRoutes())
       } catch (err) {
         console.error(err);
       }
