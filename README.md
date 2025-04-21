@@ -245,6 +245,17 @@
   - 使用vuex的持久化插件存储vuex数据，保证刷新时vuex数据不丢失
 ![image](https://github.com/user-attachments/assets/6a454170-dc1f-4a13-a1cb-a3966b4e93e8)
 
+### Layout剩余内容
+  - 退出登录
+  - 菜单搜索
+    - 下拉菜单组件展示搜索过滤到的菜单
+    - 数组的filter方法过滤菜单，返回满足条件的搜索菜单。需要递归，如果当前搜索项满足条件，则需要把当前项的祖先级菜单都找到进行展示（在递归里面能直接实现。递归前的上一项你是能知道的）
+![image](https://github.com/user-attachments/assets/47fccd99-0c39-4d82-899f-29aecded1585)
+  - 布局设置
+    - 侧边弹窗，elementui已有组件
+    - 双向数据绑定+v-if实现功能
+![image](https://github.com/user-attachments/assets/7ed1f6a2-b7b8-4c3a-a087-150b7970f064)
+
 
 
 
