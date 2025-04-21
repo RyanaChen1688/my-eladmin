@@ -245,7 +245,7 @@
   - [x] 使用vuex的持久化插件存储vuex数据，保证刷新时vuex数据不丢失
 ![image](https://github.com/user-attachments/assets/6a454170-dc1f-4a13-a1cb-a3966b4e93e8)
 
-### Layout剩余内容 【用时：0.6~2小时】
+### Layout剩余内容 【用时：1.5~4小时】
   - [x] 退出登录
   - [ ] tag菜单右键功能，看组件是否自带，没有的话可能需要自己实现一个右键点击，弹出菜单的功能
     - [ ] 监听右键点击事件
