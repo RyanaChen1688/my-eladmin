@@ -279,7 +279,15 @@
   - [ ] 分页查询
 ![image](https://github.com/user-attachments/assets/cf3cc65e-760e-4ec3-8794-394c5201dc3b)
 
-
+### vue2面试题视频学习 【用时：1~1.5小时】
+  - [ ] https://www.youtube.com/watch?v=BJ_f-zPET3k&list=PL1Fx6LrNSUDiSE7NUfsacICBPGjQWllmh&index=1&ab_channel=%E5%93%88%E9%BB%98%E8%81%8A%E5%89%8D%E7%AB%AF
+  - [ ] https://www.youtube.com/watch?v=A6iJei4_Z8A&ab_channel=%E5%93%88%E9%BB%98%E8%81%8A%E5%89%8D%E7%AB%AF
+  - [ ] https://www.youtube.com/watch?v=fjqojRC3gGM&ab_channel=%E5%93%88%E9%BB%98%E8%81%8A%E5%89%8D%E7%AB%AF
+  - [ ] https://www.youtube.com/watch?v=WqBG9dIxGRk&ab_channel=%E5%93%88%E9%BB%98%E8%81%8A%E5%89%8D%E7%AB%AF
+  - [ ] https://www.youtube.com/watch?v=SZ4f9dYVbIQ&ab_channel=%E5%93%88%E9%BB%98%E8%81%8A%E5%89%8D%E7%AB%AF
+  - [ ] https://www.youtube.com/watch?v=tLX4CC9fTWs&ab_channel=%E5%93%88%E9%BB%98%E8%81%8A%E5%89%8D%E7%AB%AF
+  - [ ] https://www.youtube.com/watch?v=VTaY8d9anB8&ab_channel=%E5%93%88%E9%BB%98%E8%81%8A%E5%89%8D%E7%AB%AF
+  - [ ] https://www.youtube.com/watch?v=pjicp8bN0Hs&ab_channel=%E5%93%88%E9%BB%98%E8%81%8A%E5%89%8D%E7%AB%AF
 
 
 
