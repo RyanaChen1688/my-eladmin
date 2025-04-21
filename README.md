@@ -8,20 +8,20 @@
 - [x] 3、需要使用git remote add 远程名字github|gitee|origin 远程仓库的地址（https://github.com/用户名/仓库名字.git）
 - [x] 4、git remote remove 远程名字
 - [x] 5、git remote rename 远程名字 远程新名字
-- [x] 6、git remote set-url 远程名字 新的url远程仓库地址
+- [x] [x] 6、git remote set-url 远程名字 新的url远程仓库地址
 
 ### 推送本地代码到远程仓库
-- 1、git checkout -b xxx个人分支 (checkout检出、-b branch分支)公司项目开发代码都是提交到个人分支上。然后由项目组管理人员评审代码，没问题后再合入主分支。一般主分支都是没有权限直接推送代码、分支也没办法删除的。阻止小白误操作。
-- 2、git branch 查看本地分支是啥
-- 3、git branch -a （-a all）查看这个仓库总共有哪些分支、git branch -r 查看所有远程追踪分支
-- 4、git checkout -b xxx个人分支 origin/xxx远程的别人的分支（你的同事说，你把我的代码分支拉下来看看。你的同事会告诉你它的分支是什么，你就可以拉下来看看它的代码）
-- 5、git add .|某一个具体的文件或者文件夹 把这个文件添加的本地暂存区
-- 6、git commit -m "提交日志"，填写提交日志，实现了什么功能，做了什么事？
-- 7、git push 远程仓库的名字/origin 仓库名字/分支（不写分支，默认就是main/master）
-- 8、git branch -d xxx 删除xxx分支
-- 9、git branch -D xxx 强制删除xxx分支
-- 10、remotes/origin/main 不是一个本地分支（不像 main），它是 Git 自动管理的，你不能用 git branch -d 直接删掉它。想删除它，你需要清除 Git 对远程的记录。
-- 11、分支查看切换
+- [x] 1、git checkout -b xxx个人分支 (checkout检出、-b branch分支)公司项目开发代码都是提交到个人分支上。然后由项目组管理人员评审代码，没问题后再合入主分支。一般主分支都是没有权限直接推送代码、分支也没办法删除的。阻止小白误操作。
+- [x] 2、git branch 查看本地分支是啥
+- [x] 3、git branch -a （-a all）查看这个仓库总共有哪些分支、git branch -r 查看所有远程追踪分支
+- [x] 4、git checkout -b xxx个人分支 origin/xxx远程的别人的分支（你的同事说，你把我的代码分支拉下来看看。你的同事会告诉你它的分支是什么，你就可以拉下来看看它的代码）
+- [x] 5、git add .|某一个具体的文件或者文件夹 把这个文件添加的本地暂存区
+- [x] 6、git commit -m "提交日志"，填写提交日志，实现了什么功能，做了什么事？
+- [x] 7、git push 远程仓库的名字/origin 仓库名字/分支（不写分支，默认就是main/master）
+- [x] 8、git branch -d xxx 删除xxx分支
+- [x] 9、git branch -D xxx 强制删除xxx分支
+- [x] 10、remotes/origin/main 不是一个本地分支（不像 main），它是 Git 自动管理的，你不能用 git branch -d 直接删掉它。想删除它，你需要清除 Git 对远程的记录。
+- [x] 11、分支查看切换
   ```shell
   git branch        # 只看本地分支
   git branch -r     # 只看远程分支
@@ -39,7 +39,7 @@
   ```
 
   ### 完整依赖，使用这个里面的package.json。从里面提取需要的依赖配置项、启动脚本等。修改完成之后，推送到自己的个人分支上
-  - 目的：保证代码提交的安全，由管理员来进行pr审查合入、做这个操作之前先把main分支提交的权限关闭。
+  - [x] 目的：保证代码提交的安全，由管理员来进行pr审查合入、做这个操作之前先把main分支提交的权限关闭。
   ```
   {
   "name": "eladmin-web",
@@ -157,103 +157,103 @@
   ]}
   ```
 ### 创建项目目录结构
-- 接口放哪里api
-- 路由router
-- 状态管理vuex
-- 组件 components
-- 页面 views
-- 工具方法 utils
-- 资源文件见 assets
-- layout布局文件夹
-- mixin（暂时不写内容）
+- [x] 接口放哪里api
+- [x] 路由router
+- [x] 状态管理vuex
+- [x] 组件 components
+- [x] 页面 views
+- [x] 工具方法 utils
+- [x] 资源文件见 assets
+- [x] layout布局文件夹
+- [x] mixin（暂时不写内容）
 ![image](https://github.com/user-attachments/assets/8d2574be-b3ef-4758-9897-1d3c1f4b8995)
 
 ### 创建vuex文件、vue-router文件、导入elementui
-- store/index.js
-- router/index.js
-- main.js
-- elementui
+- [x] store/index.js
+- [x] router/index.js
+- [x] main.js
+- [x] elementui
 
 ### 【测试】编写一个测试路由，验证elementui导入是否成功、路由、vuex是否配置成功
 
 ### 完成登录功能
-- 后端接口文档：https://api.eladmin.uandj.site/doc.html#/home
-- 添加一个新的路由 /login
-- 参照网站设计登录页面 /views/Login.vue
-- 对接验证码接口
-  - 先安装axios库
-  - 需要实现点击验证码，自动刷新验证码的功能
-- 对接登录接口
-  - 登录失败需要给出提示
-  - 密码需要rsa加密，公钥如下
+- [x] 后端接口文档：https://api.eladmin.uandj.site/doc.html#/home
+- [x] 添加一个新的路由 /login
+- [x] 参照网站设计登录页面 /views/Login.vue
+- [x] 对接验证码接口
+  - [x] 先安装axios库
+  - [x] 需要实现点击验证码，自动刷新验证码的功能
+- [x] 对接登录接口
+  - [x] 登录失败需要给出提示
+  - [x] 密码需要rsa加密，公钥如下
     ```javascript
     const publicKey = 'MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBANL378k3RiZHWx5AfJqdH9xRNBmD9wGD\n' +
   '2iRe41HdTNF8RUhNnHit5NpMNtGL0NPTSSpPjjI1kJfVorRvaQerUgkCAwEAAQ=='
     ```
-  - 登录成功后跳转到 首页路由 /
-  - 登录成功后把 token 存储到 vuex中
-- 这些代码都直接写在Login.vue组件中
-- 对登录表单进行验证，验证项如下
-  - 用户名必填
-  - 密码必填
-  - 未输入用户名和密码则提示用户名必填、密码不填
+  - [x] 登录成功后跳转到 首页路由 /
+  - [x] 登录成功后把 token 存储到 vuex中
+- [x] 这些代码都直接写在Login.vue组件中
+- [x] 对登录表单进行验证，验证项如下
+  - [x] 用户名必填
+  - [x] 密码必填
+  - [x] 未输入用户名和密码则提示用户名必填、密码不填
  
 ### 登录成功后跳转
-  - 跳转到/dashboard路由
-    - 新建一个view/dashboard.vue文件
-    - 再在router/index.js中添加路由
-    - 登录成功后跳转路由
-    - 这个路由对应的页面暂时用作测试，不用有什么具体的内容
-  - 进入/dashboard页面后立即请求用户的信息和用户可访问的菜单
-    - 在methods中定义两个请求接口的方法，方法中需要输出请求得到的结果
-    - 在created中调用这两个接口请求方法
-    - 用户信息接口文档：https://api.eladmin.uandj.site/doc.html#/default/%E7%B3%BB%E7%BB%9F%EF%BC%9A%E7%B3%BB%E7%BB%9F%E6%8E%88%E6%9D%83%E6%8E%A5%E5%8F%A3/getUserInfoUsingGET
-    - 用户菜单接口文档：https://api.eladmin.uandj.site/doc.html#/default/%E7%B3%BB%E7%BB%9F%EF%BC%9A%E8%8F%9C%E5%8D%95%E7%AE%A1%E7%90%86/buildMenusUsingGET
-    - 【注意】这两个接口是需要传递token才能访问的。具体参照接口文档和axios官方文档：https://axios-http.com/zh/docs/intro
+  - [x] 跳转到/dashboard路由
+    - [x] 新建一个view/dashboard.vue文件
+    - [x] 再在router/index.js中添加路由
+    - [x] 登录成功后跳转路由
+    - [x] 这个路由对应的页面暂时用作测试，不用有什么具体的内容
+  - [x] 进入/dashboard页面后立即请求用户的信息和用户可访问的菜单
+    - [x] 在methods中定义两个请求接口的方法，方法中需要输出请求得到的结果
+    - [x] 在created中调用这两个接口请求方法
+    - [x] 用户信息接口文档：https://api.eladmin.uandj.site/doc.html#/default/%E7%B3%BB%E7%BB%9F%EF%BC%9A%E7%B3%BB%E7%BB%9F%E6%8E%88%E6%9D%83%E6%8E%A5%E5%8F%A3/getUserInfoUsingGET
+    - [x] 用户菜单接口文档：https://api.eladmin.uandj.site/doc.html#/default/%E7%B3%BB%E7%BB%9F%EF%BC%9A%E8%8F%9C%E5%8D%95%E7%AE%A1%E7%90%86/buildMenusUsingGET
+    - [x] 【注意】这两个接口是需要传递token才能访问的。具体参照接口文档和axios官方文档：https://axios-http.com/zh/docs/intro
 
-    - 先直接在axios请求中传递token，然后再学着封装axios使用
-      - 在utils文件夹下创建一个request.js文件
-      - request.js中创建一个axios实例  
-      - 配置请求拦截器自动传递token
-      - 导出这个axios实例
+    - [x] 先直接在axios请求中传递token，然后再学着封装axios使用
+      - [x] 在utils文件夹下创建一个request.js文件
+      - [x] request.js中创建一个axios实例  
+      - [x] 配置请求拦截器自动传递token
+      - [x] 导出这个axios实例
 
-      - 在dashboard组件中导入封装好的axios实例
-      - 利用封装的axios发起请求。此时拦截器会工作，自动给请求加上token
-      - 测试接口是否能正常访问
+      - [x] 在dashboard组件中导入封装好的axios实例
+      - [x] 利用封装的axios发起请求。此时拦截器会工作，自动给请求加上token
+      - [x] 测试接口是否能正常访问
 
-    - 扩展
-      - 给axios统一添加接口请求报错提示（响应拦截器中实现，需要导入elementui的Msg组件）
-      - 在dashboard页面中使用组件（测试组件）把菜单渲染出来
-- 下一个任务再对接口操作、vuex的操作进行优化
-  - 实现记住我，使用cookie实现
-  - ![image](https://github.com/user-attachments/assets/3e357dbe-9faa-4595-a82e-7e3fc615338b)
-  - 接口：把接口请求定义在api目录下、封装axios
-  - vuex：把登录相关的状态数据分模块存储
+    - [x] 扩展
+      - [x] 给axios统一添加接口请求报错提示（响应拦截器中实现，需要导入elementui的Msg组件）
+      - [x] 在dashboard页面中使用组件（测试组件）把菜单渲染出来
+- [x] 下一个任务再对接口操作、vuex的操作进行优化
+  - [x] 实现记住我，使用cookie实现
+  - [x] ![image](https://github.com/user-attachments/assets/3e357dbe-9faa-4595-a82e-7e3fc615338b)
+  - [x] 接口：把接口请求定义在api目录下、封装axios
+  - [x] vuex：把登录相关的状态数据分模块存储
 
 ### 搭建后台管理系统页面框架Layout
-  - 侧边栏菜单
-    - 项目logo标题
-    - 菜单
-    - 有展开折叠状态（用一个状态数据表示）
-  - 顶部
-    - 面包屑导航
-    - 头像
-  - 选修卡
-    - 存储打开过的菜单（数组）
-    - 当前选中菜单
-  - 把Layout中涉及的状态数据存储在vuex的layout模块中
-  - 使用vuex的持久化插件存储vuex数据，保证刷新时vuex数据不丢失
+  - [x] 侧边栏菜单
+    - [x] 项目logo标题
+    - [x] 菜单
+    - [x] 有展开折叠状态（用一个状态数据表示）
+  - [x] 顶部
+    - [x] 面包屑导航
+    - [x] 头像
+  - [x] 选修卡
+    - [x] 存储打开过的菜单（数组）
+    - [x] 当前选中菜单
+  - [x] 把Layout中涉及的状态数据存储在vuex的layout模块中
+  - [x] 使用vuex的持久化插件存储vuex数据，保证刷新时vuex数据不丢失
 ![image](https://github.com/user-attachments/assets/6a454170-dc1f-4a13-a1cb-a3966b4e93e8)
 
 ### Layout剩余内容
-  - 退出登录
-  - 菜单搜索
-    - 下拉菜单组件展示搜索过滤到的菜单
-    - 数组的filter方法过滤菜单，返回满足条件的搜索菜单。需要递归，如果当前搜索项满足条件，则需要把当前项的祖先级菜单都找到进行展示（在递归里面能直接实现。递归前的上一项你是能知道的）
+  - [x] 退出登录
+  - [x] 菜单搜索
+    - [x] 下拉菜单组件展示搜索过滤到的菜单
+    - [x] 数组的filter方法过滤菜单，返回满足条件的搜索菜单。需要递归，如果当前搜索项满足条件，则需要把当前项的祖先级菜单都找到进行展示（在递归里面能直接实现。递归前的上一项你是能知道的）
 ![image](https://github.com/user-attachments/assets/47fccd99-0c39-4d82-899f-29aecded1585)
-  - 布局设置
-    - 侧边弹窗，elementui已有组件
-    - 双向数据绑定+v-if实现功能
+  - [x] 布局设置
+    - [x] 侧边弹窗，elementui已有组件
+    - [x] 双向数据绑定+v-if实现功能
 ![image](https://github.com/user-attachments/assets/7ed1f6a2-b7b8-4c3a-a087-150b7970f064)
 
 
