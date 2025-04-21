@@ -245,18 +245,39 @@
   - [x] 使用vuex的持久化插件存储vuex数据，保证刷新时vuex数据不丢失
 ![image](https://github.com/user-attachments/assets/6a454170-dc1f-4a13-a1cb-a3966b4e93e8)
 
-### Layout剩余内容
+### Layout剩余内容 【用时：0.6~2小时】
   - [x] 退出登录
-  - [] 菜单搜索
-    - [] 下拉菜单组件展示搜索过滤到的菜单
-    - [] 数组的filter方法过滤菜单，返回满足条件的搜索菜单。需要递归，如果当前搜索项满足条件，则需要把当前项的祖先级菜单都找到进行展示（在递归里面能直接实现。递归前的上一项你是能知道的）
+  - [ ] tag菜单右键功能，看组件是否自带，没有的话可能需要自己实现一个右键点击，弹出菜单的功能
+    - [ ] 监听右键点击事件
+    - [ ] 弹出自定义菜单（使用相对定位定位菜单在点击的tag周围）
+    - [ ] 给弹出的菜单绑定事件，完成对应的功能
+![image](https://github.com/user-attachments/assets/51c4acbf-1125-4d90-80ae-e9dd13ce4542)
+  - [ ] 菜单搜索
+    - [ ] 下拉菜单组件展示搜索过滤到的菜单
+    - [ ] 数组的filter方法过滤菜单，返回满足条件的搜索菜单。需要递归，如果当前搜索项满足条件，则需要把当前项的祖先级菜单都找到进行展示（在递归里面能直接实现。递归前的上一项你是能知道的）
 ![image](https://github.com/user-attachments/assets/47fccd99-0c39-4d82-899f-29aecded1585)
-  - [] 布局设置
-    - [] 侧边弹窗，elementui已有组件
-    - [] 双向数据绑定+v-if实现功能
+  - [ ] 布局设置
+    - [ ] 侧边弹窗，elementui已有组件
+    - [ ] 双向数据绑定+v-if实现功能
 ![image](https://github.com/user-attachments/assets/7ed1f6a2-b7b8-4c3a-a087-150b7970f064)
 
 
+### 个人中心页面 【用时：1~6小时】
+  - [ ] 用户信息展示
+  - [ ] 密码修改
+  - [ ] 邮箱修改
+  - [ ] 用户基础信息修改
+  - [ ] 操作日志
+    - [ ] 表格加载数据
+    - [ ] 分页查询
+![image](https://github.com/user-attachments/assets/d9edc4f8-9eba-4fa2-9996-c8fa816475ea)
+
+### 运维管理/应用管理 【用时：1~4小时】
+  - [ ] 应用的增删改查，7个简单字段
+  - [ ] 导出
+  - [ ] 搜索
+  - [ ] 分页查询
+![image](https://github.com/user-attachments/assets/cf3cc65e-760e-4ec3-8794-394c5201dc3b)
 
 
 
